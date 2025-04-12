@@ -161,16 +161,3 @@ plt.show()
 
 #---------------------------------------------------------------------------------------------------------------------------------
 
-#Objective 8: Crime Trend Analysis Over Years
-df['total_crimes'] = df.iloc[:, 7:].sum(axis=1)
-
-yearly_crimes = df.groupby('year').sum(numeric_only=True)
-yearly_crimes_total = yearly_crimes.sum(axis=1)
-plt.figure(figsize=(10,6))
-plt.plot(yearly_crimes_total.index, yearly_crimes_total.values, marker='o', color='orange')
-plt.title('Total IPC Crimes per Year')
-plt.xlabel('Year')
-plt.ylabel('Number of Crimes')
-plt.grid(True)
-plt.tight_layout()
-plt.show()
